@@ -1,6 +1,5 @@
 import numpy as np
 from scipy.optimize import minimize
-from scipy import integrate
 
 #transit durations of case I (planet leads ingress, planet trails egress)
 def tdur_I(tdur, phi, pbin, R_S=1, R_p=1, R_s=1, a_sp=2, P=60, a=0.3, b=0, solarRad=False, jupRad=False, hrs=False):
