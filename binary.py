@@ -10,8 +10,8 @@ def tdur_I(tdur, phi, pbin, R_S=1, R_p=1, R_s=1, a_sp=2, P=60, a=0.3, b=0, solar
     if not hrs:
         P *= 24.        #convert period from days to hours
         
-    a_p = R_s**3/(R_s**3+R_p**3) * a_sp
-    a_s = R_p**3/(R_s**3+R_p**3) * a_sp
+    a_p = R_s**3/(R_s**3+R_p**3) * a_sp * (R_p+R_s)
+    a_s = R_p**3/(R_s**3+R_p**3) * a_sp * (R_p+R_s)
     return (tdur - P/(2*np.pi*a)*(2*np.sqrt((R_S+R_p)**2-(b*R_S)**2) - a_p*np.sin(phi) + a_p*np.sin(phi + 2*np.pi*tdur/pbin)))**2
 
 #transit durations of case II (planet leads ingress, satellite trails egress)
